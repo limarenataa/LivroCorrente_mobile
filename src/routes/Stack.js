@@ -5,8 +5,6 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 import Preload from '../views/Preload'
 import Login from '../views/Login'
-import Home from '../views/Home'
-import Bibliotecas from '../views/Bibliotecas'
 import Tab from '../routes/Tab'
 
 
@@ -23,8 +21,6 @@ const Stack = () => {
 
             <routeStack.Screen name="Preload" component={Preload}/>
             <routeStack.Screen name="Login" component={Login}/>
-            <routeStack.Screen name="Home" component={Home}/>
-            <routeStack.Screen name="Bibliotecas" component={Bibliotecas}/>
             <routeStack.Screen name="Tab" component={Tab}/>
            
         </routeStack.Navigator>

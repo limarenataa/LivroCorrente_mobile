@@ -11,8 +11,8 @@ const Preload = () => {
     const navigation = useNavigation();
     
         setTimeout(() => {
-            navigation.navigate('Home')
-         }, 2000);
+            navigation.navigate('Tab')
+         }, 1000);
       
 
     return (

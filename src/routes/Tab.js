@@ -2,6 +2,8 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
+import TabBar from '../components/TabBar';
+
 //Import views
 import Home from '../views/Home';
 import Favoritos from '../views/Favoritos';
@@ -13,11 +15,7 @@ const routeTab = createBottomTabNavigator()
 
 const Tab = () => {
     return (
-        <routeTab.Navigator initialRouteName='Home' tabBarOptions={{
-            activeTintColor:'red',
-            inactiveTintColor: 'blue',
-            labelStyle: {fontSize: 20}
-        }}>
+        <routeTab.Navigator tabBar={props => <TabBar {...props} />}>
             <routeTab.Screen name="Home" component={Home}/>
             <routeTab.Screen name="Favoritos" component={Favoritos}/>
             <routeTab.Screen name="Bibliotecas" component={Bibliotecas}/>
