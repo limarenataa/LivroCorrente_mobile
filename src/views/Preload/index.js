@@ -12,7 +12,7 @@ const Preload = () => {
     
         setTimeout(() => {
             navigation.navigate('Tab')
-         }, 1000);
+         }, 800);
       
 
     return (
