@@ -1,0 +1,20 @@
+
+
+npm install @react-navigation/native @react-navigation/stack
+npm install @react-navigation/bottom-tabs
+npm install react-native-swiper
+npm i styled-components
+npm i @react-native-community/async-storage
+
+expo install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
+npm install react-native-screens
+
+Icones Figma:
+npm install --save-dev @iconify/react @iconify/icons-fluent @iconify/icons-clarity
+
+
+
+
+
+
+
