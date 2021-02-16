@@ -1,5 +1,6 @@
 import React from 'react';
-import { SafeAreaView, View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, Image, FlatList } from 'react-native';
+import {useState} from 'react';
+import { SafeAreaView, View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, Image, FlatList, Modal } from 'react-native';
 
 //Icons
 import { AntDesign } from '@expo/vector-icons'; 
@@ -11,6 +12,7 @@ import Logo from '../../../assets/logo.png';
 
 //Components
 import CardCampanha from '../../components/CardCampanha';
+import ModalInfo from '../../components/ModalInfo'
 
 //Simulando Banco de Dados
 const dadosCampanhas = [
@@ -49,6 +51,14 @@ const dadosCampanhas = [
   ]
 
 function Home (){
+
+     //State para controlar a exibição do modal
+     const [showModal, setShowModal] = useState(false);
+
+     const handleShowModal = () => {
+         setShowModal(true);
+     }
+
     return (
         <SafeAreaView style={styles.container}>
 
@@ -80,18 +90,25 @@ function Home (){
                         keyExtractor={(item) => `${item.id}`}    
                         //Para cada usuário, cria um componente User para renderizar o usuário    
                         renderItem={({item}) => (
-                        <CardCampanha 
-                                    capa_pedido={item.capa_pedido} 
-                                    titulo_pedido={item.titulo_pedido} 
-                                    numeroExemplar_pedido={item.numeroExemplar_pedido}
-                                    genero_pedido={item.genero_pedido}
-                                    nome_biblioteca={item.nome_biblioteca}
-                        />
-                    )}
+                            <TouchableOpacity  onPress={() => handleShowModal()}>
+                                <CardCampanha 
+                                            capa_pedido={item.capa_pedido} 
+                                            titulo_pedido={item.titulo_pedido} 
+                                            numeroExemplar_pedido={item.numeroExemplar_pedido}
+                                            genero_pedido={item.genero_pedido}
+                                            nome_biblioteca={item.nome_biblioteca}
+                                />
+                            </TouchableOpacity> 
+                        )}
                     />
                 </View>
-
             </ScrollView>
+            
+            <ModalInfo
+                show={showModal}
+                setShow={setShowModal}                
+            />
+            
 
         </SafeAreaView>
     )

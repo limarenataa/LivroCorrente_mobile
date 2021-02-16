@@ -7,8 +7,8 @@ import Capa from '../../../assets/capa.png';
 const CardCampanha = (props) => {
                 
 return (
-    <View>
-       <TouchableOpacity style={styles.container}>
+    <View style={styles.container}>
+  
             <Image style={styles.capaLivro} source={Capa}/>
             <View>
                 <Text style={styles.titleLivro}>{props.titulo_pedido}</Text>
@@ -16,9 +16,9 @@ return (
                 <Text style={styles.infoLivro}>Gênero: {props.genero_pedido}</Text>
                 <Text>{props.nome_biblioteca}</Text>
             </View>
-        </TouchableOpacity> 
+       
     </View>
-  )
+)
 }
 
 export default CardCampanha;
