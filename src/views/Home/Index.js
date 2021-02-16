@@ -13,7 +13,15 @@ import Logo from '../../../assets/logo.png';
 import CardCampanha from '../../components/CardCampanha';
 
 //Simulando Banco de Dados
-const dadosProdutos = [
+const dadosCampanhas = [
+
+    {
+        id: Math.random(),
+        titulo_pedido: "O pequeno príncipe",
+        numeroExemplar_pedido: "2",
+        genero_pedido: "Fábula",
+        nome_biblioteca: "Ciranda de Tarituba"
+    },
 
     {
         id: Math.random(),
@@ -52,7 +60,7 @@ function Home (){
                         <Entypo name="dots-three-horizontal" size={24} color="#686868" />
                     </TouchableOpacity>
                 </View>
-
+                
                 <View style={styles.mainArea}>
                     <Text style={styles.mainTitle}>Como eu posso ajudar?</Text>
                     <Text style={styles.mainSubTitle}>Doe um livro a uma biblioteca comunitária!</Text>
@@ -68,7 +76,7 @@ function Home (){
                 <View style={styles.containerCampanha}>
                 {/* FlatList -  Parece o map do React */}
                     <FlatList
-                        data={dadosProdutos}
+                        data={dadosCampanhas}
                         keyExtractor={(item) => `${item.id}`}    
                         //Para cada usuário, cria um componente User para renderizar o usuário    
                         renderItem={({item}) => (
@@ -100,7 +108,6 @@ const styles = StyleSheet.create({
 
     scroller: {
        flex:1,
-       padding: 20,
     },
 
     headerArea: {
@@ -160,6 +167,8 @@ const styles = StyleSheet.create({
         fontSize: 17,
         color: '#959292',
         textAlign: 'center',
-    }
+    },
+
+  
 
 })

@@ -24,12 +24,15 @@ export default function TabBar ({state}){
                                                             {/* Condição. confere o estado. se for correspondente ao número do index, a opacidade fica 1, se for false, 0.5 */}
                 <AntDesign name="home" size={30} style={{opacity: state.index === 0 ? 1 : 0.5, color: '#686868'}} />
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>goTo('Favoritos')} style={styles.tabItem}>
-                <AntDesign name="hearto" size={28}  style={{opacity: state.index === 1 ? 1 : 0.5, color: '#686868'}} />
-            </TouchableOpacity>
+           
             <TouchableOpacity onPress={()=>goTo('Bibliotecas')} style={styles.tabItem}>
                 <MaterialCommunityIcons name="bookshelf" size={32} style={{opacity: state.index === 2 ? 1: 0.5, color: '#686868'}} />
             </TouchableOpacity>
+
+            <TouchableOpacity onPress={()=>goTo('Favoritos')} style={styles.tabItem}>
+                <AntDesign name="hearto" size={28}  style={{opacity: state.index === 1 ? 1 : 0.5, color: '#686868'}} />
+            </TouchableOpacity>
+            
             <TouchableOpacity onPress={()=>goTo('PontosColeta')} style={styles.tabItem}>
                 <MaterialCommunityIcons name="map-marker-outline" size={30} style={{opacity: state.index === 3 ? 1 : 0.5, color: '#686868'}} />
             </TouchableOpacity>

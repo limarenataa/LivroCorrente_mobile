@@ -36,6 +36,13 @@ const dadosBibliotecas = [
         cidade_biblioteca: "Paraty"
     },
 
+    {
+        id: Math.random(),
+        nome: "Ciranda de Tariuba",
+        nome_rede: "Mar de Leitores",
+        estado_biblioteca: "RJ",
+        cidade_biblioteca: "Paraty"
+    },
     
   ]
 
@@ -97,7 +104,6 @@ const styles = StyleSheet.create({
 
     scroller: {
        flex:1,
-       padding: 20,
     },
 
     headerArea: {

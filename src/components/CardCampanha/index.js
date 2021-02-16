@@ -34,9 +34,16 @@ const styles = StyleSheet.create({
         margin: 10,
         borderRadius: 10,
         backgroundColor: '#FFFFFF',
-        shadowOffset: { width: 2, height:2, },
-        shadowColor: '#CCC',
-        shadowOpacity: 1.0,
+        //shadow IOS
+        shadowColor: "#CCC",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.23,
+        shadowRadius: 2.62,
+        //shadow android
+        elevation: 4,
     },
 
     capaLivro: {
