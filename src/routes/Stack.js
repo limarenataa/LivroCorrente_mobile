@@ -11,6 +11,7 @@ import Tab from '../routes/Tab'
 const routeStack = createStackNavigator()
 
 const Stack = () => {
+    
     return (
         <routeStack.Navigator 
             initialRouteName="Preload"  //determina a tela inicial

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 //Assets/img
 import Capa from '../../../assets/capa.png';
@@ -7,14 +7,16 @@ import Capa from '../../../assets/capa.png';
 const CardCampanha = (props) => {
                 
 return (
-    <View style={styles.container}>
-        <Image style={styles.capaLivro} source={Capa}/>
-        <View>
-            <Text style={styles.titleLivro}>{props.titulo_pedido}</Text>
-            <Text style={styles.infoLivro}>Exemplares: {props.numeroExemplar_pedido}</Text>
-            <Text style={styles.infoLivro}>Gênero: {props.genero_pedido}</Text>
-            <Text>{props.nome_biblioteca}</Text>
-        </View>
+    <View>
+       <TouchableOpacity style={styles.container}>
+            <Image style={styles.capaLivro} source={Capa}/>
+            <View>
+                <Text style={styles.titleLivro}>{props.titulo_pedido}</Text>
+                <Text style={styles.infoLivro}>Exemplares: {props.numeroExemplar_pedido}</Text>
+                <Text style={styles.infoLivro}>Gênero: {props.genero_pedido}</Text>
+                <Text>{props.nome_biblioteca}</Text>
+            </View>
+        </TouchableOpacity> 
     </View>
   )
 }
@@ -32,7 +34,9 @@ const styles = StyleSheet.create({
         margin: 10,
         borderRadius: 10,
         backgroundColor: '#FFFFFF',
-        boxShadow: '2px 2px 2px #CCC',
+        shadowOffset: { width: 2, height:2, },
+        shadowColor: '#CCC',
+        shadowOpacity: 1.0,
     },
 
     capaLivro: {

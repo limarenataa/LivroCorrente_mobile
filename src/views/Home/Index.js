@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, Image, FlatList } from 'react-native';
-import { Icon } from '@iconify/react';
-import searchLine from '@iconify/icons-clarity/search-line';
-import barsLine from '@iconify/icons-clarity/bars-line';
+import { SafeAreaView, View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, Image, FlatList } from 'react-native';
+
+//Icons
+import { AntDesign } from '@expo/vector-icons'; 
+import { Entypo } from '@expo/vector-icons'; 
 
 //Assets/img
 import Logo from '../../../assets/logo.png';
@@ -41,14 +42,14 @@ const dadosProdutos = [
 
 function Home (){
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
 
             <ScrollView style={styles.scroller}>
 
                 <View style={styles.headerArea}>
                     <Image style={styles.headerLogo} source={Logo} />
                     <TouchableOpacity>
-                        <Icon icon={barsLine} style={{color: '#686868', fontSize: '30px'}}/>
+                        <Entypo name="dots-three-horizontal" size={24} color="#686868" />
                     </TouchableOpacity>
                 </View>
 
@@ -60,7 +61,7 @@ function Home (){
                 <View style={styles.searchArea}>
                     <TextInput style={styles.searchInput} placeholder="Pesquisar campanha"/>
                     <TouchableOpacity>
-                        <Icon icon={searchLine} style={{color: '#686868', fontSize: '20px'}} />
+                        <AntDesign name="search1" size={24} color="#686868" />
                     </TouchableOpacity>
                 </View>
 
@@ -84,7 +85,7 @@ function Home (){
 
             </ScrollView>
 
-        </View>
+        </SafeAreaView>
     )
 }
 

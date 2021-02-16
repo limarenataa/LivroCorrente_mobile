@@ -9,6 +9,8 @@ import Home from '../views/Home';
 import Favoritos from '../views/Favoritos';
 import Bibliotecas from '../views/Bibliotecas';
 import PontosColeta from '../views/PontosColeta';
+import Biblioteca from '../views/Biblioteca';
+
 
 
 const routeTab = createBottomTabNavigator()
@@ -19,7 +21,8 @@ const Tab = () => {
             <routeTab.Screen name="Home" component={Home}/>
             <routeTab.Screen name="Favoritos" component={Favoritos}/>
             <routeTab.Screen name="Bibliotecas" component={Bibliotecas}/>
-            <routeTab.Screen name="PontosColeta" component={PontosColeta}/>   
+            <routeTab.Screen name="PontosColeta" component={PontosColeta}/> 
+            <routeTab.Screen name="Biblioteca" component={Biblioteca}/> 
         </routeTab.Navigator>
     )
 }
