@@ -10,16 +10,16 @@ const Preload = () => {
     //Enviar para a tela Home depois 2000ms
     const navigation = useNavigation();
     
+    //Carregando o app na página PreLoad antes de direcionar para a pag Login
         setTimeout(() => {
-            navigation.navigate('Tab')
-         }, 800);
+            navigation.navigate('Login')
+         }, 1000);
       
 
     return (
         <SafeAreaView style={styles.container}>
             
             <ImageBackground style={styles.background} source={PreloadImg}>
-                {/* Substituir backgroung e Inserir LivroCorrente como texto? */}
                 {/* Spinner: */}
                 <ActivityIndicator style={styles.loadingIcon} size="large" color="#fff"/>
             </ImageBackground>   

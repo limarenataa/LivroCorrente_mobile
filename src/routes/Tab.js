@@ -5,11 +5,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import TabBar from '../components/TabBar';
 
 //Import views
+
 import Home from '../views/Home';
 import Favoritos from '../views/Favoritos';
 import Bibliotecas from '../views/Bibliotecas';
 import PontosColeta from '../views/PontosColeta';
 import Biblioteca from '../views/Biblioteca';
+
 
 
 
