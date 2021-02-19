@@ -30,7 +30,7 @@ export default function TabBar ({state}){
                 <MaterialCommunityIcons name="bookshelf" size={33} style={{opacity: state.index === 2 ? 1: 0.5, color: '#686868'}} />
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={()=>goTo('Favoritos')} style={styles.tabItem}>
+            <TouchableOpacity onPress={()=>goTo('Eventos')} style={styles.tabItem}>
                 <AntDesign name="calendar" size={29} style={{opacity: state.index === 1 ? 1 : 0.5, color: '#686868'}} />
             </TouchableOpacity>
             
