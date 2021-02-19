@@ -51,45 +51,37 @@ export default function Bibliotecas (){
     return (
         <SafeAreaView style={styles.container}>
 
+            <TouchableOpacity style={styles.headerArea}>
+                <Entypo name="dots-three-horizontal" size={24} color="#686868" />
+            </TouchableOpacity>
+    
+            <View style={styles.mainArea}>
+                <Text style={styles.mainTitle}>Bibliotecas cadastradas</Text>
+                <Text style={styles.mainSubTitle}>Apoie uma biblioteca comunitária!</Text>
+            </View>
+
+            <View style={styles.searchArea}>
+                <TextInput style={styles.searchInput} placeholder="Encontrar biblioteca"/>
+                <TouchableOpacity>
+                    <AntDesign name="search1" size={24} color="#686868" />
+                </TouchableOpacity>
+            </View>
+
             <ScrollView style={styles.scroller}>
 
-       
-                <TouchableOpacity style={styles.headerArea}>
-                    <Entypo name="dots-three-horizontal" size={24} color="#686868" />
-                </TouchableOpacity>
-        
-
-                <View style={styles.mainArea}>
-                    <Text style={styles.mainTitle}>Bibliotecas cadastradas</Text>
-                    <Text style={styles.mainSubTitle}>Apoie uma biblioteca comunitária!</Text>
-                </View>
-
-                <View style={styles.searchArea}>
-                    <TextInput style={styles.searchInput} placeholder="Encontrar biblioteca"/>
-                    <TouchableOpacity>
-                        <AntDesign name="search1" size={24} color="#686868" />
-                    </TouchableOpacity>
-                </View>
-
-                <View style={styles.containerCampanha}>
-                {/* FlatList -  Parece o map do React */}
-                    <FlatList
-                        data={dadosBibliotecas}
-                        keyExtractor={(item) => `${item.id}`}    
-                        //Para cada usuário, cria um componente User para renderizar o usuário    
-                        renderItem={({item}) => (
-                        <CardBiblioteca 
-                                    nome={item.nome} 
-                                    nome_rede={item.nome_rede} 
-                                    estado_biblioteca={item.estado_biblioteca}
-                                    cidade_biblioteca={item.cidade_biblioteca}       
-                        />
-                    )}
+            <View style={styles.containerCampanha}>
+                {dadosBibliotecas.map((item, id)=>(
+                    <CardBiblioteca 
+                        key={id} 
+                        nome={item.nome} 
+                        nome_rede={item.nome_rede} 
+                        estado_biblioteca={item.estado_biblioteca}
+                        cidade_biblioteca={item.cidade_biblioteca}       
                     />
-                </View>
-               
-            </ScrollView>
-          
+                ))}
+            </View>
+
+            </ScrollView>    
         </SafeAreaView>
     )
 }

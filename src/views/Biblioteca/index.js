@@ -69,27 +69,22 @@ export default function Biblioteca (){
                             <Text style={styles.nomeBiblioteca}>Ciranda de Tariuba</Text>
                             <Text style={styles.nomeRedeBiblioteca}>Mar de Leitores</Text>
                         </View>
-                        <TouchableOpacity style={styles.favIcon}>
-                            <AntDesign name="hearto" size={28} color="#686868" />
-                        </TouchableOpacity>
                     </View>
 
                     <View style={styles.campanhasBiblio}>
                         <Text style={styles.titleCampanhas}>Confira as campanhas desta biblioteca: </Text>
             
-                        <FlatList
-                            data={dadosCampanhas}
-                            keyExtractor={(item) => `${item.id}`}     
-                            renderItem={({item}) => (
+                        {dadosCampanhas.map((item, id)=>(
                             <CardCampanha 
-                                        capa_pedido={item.capa_pedido} 
-                                        titulo_pedido={item.titulo_pedido} 
-                                        numeroExemplar_pedido={item.numeroExemplar_pedido}
-                                        genero_pedido={item.genero_pedido}
-                                        nome_biblioteca={item.nome_biblioteca}
+                                key={id} 
+                                capa_pedido={item.capa_pedido} 
+                                titulo_pedido={item.titulo_pedido} 
+                                numeroExemplar_pedido={item.numeroExemplar_pedido}
+                                genero_pedido={item.genero_pedido}
+                                nome_biblioteca={item.nome_biblioteca}
                             />
-                        )}
-                        />
+                        ))}
+                        
                     </View>
                 </View>
 
