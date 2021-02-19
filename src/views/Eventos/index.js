@@ -1,8 +1,9 @@
 import React from 'react';
-import {SafeAreaView, View, ScrollView, StyleSheet, TouchableOpacity, Image, Text, FlatList}  from 'react-native'
+import {SafeAreaView, View, ScrollView, StyleSheet, TouchableOpacity, Image, Text, FlatList, ImageBackground}  from 'react-native'
 
 //Assets/img
 import Banner from '../../../assets/abralivro.png';
+import Capa from '../../../assets/capaeventos.png';
 
 //Components
 import CardEvents from '../../components/CardEvents';
@@ -45,15 +46,14 @@ export default function Eventos (){
         <SafeAreaView style={styles.container}>
             <ScrollView style={styles.scroller}>
 
-                <View style={styles.pageHeader}>
+                <ImageBackground source={Capa} style={styles.pageHeader}>
                     <TouchableOpacity style={styles.headerMenu}>
                         <Entypo name="dots-three-horizontal" size={24} color="#F8F5F5" />
                     </TouchableOpacity>
-                </View>
+                </ImageBackground>
 
                 <View style={styles.pageBody}>
                     <View style={styles.infoEventArea}>
-                        <Image style={styles.logo} source={Banner}/>
                         <View style={styles.infoEvent}>
                             <Text style={styles.saveTheDate}>Save The Date</Text>
                             <Text style={styles.infoDate}>Eventos literários</Text>
@@ -64,22 +64,17 @@ export default function Eventos (){
                     </View>
 
                     <View>
-                        <Text style={styles.titlePage}>Confira os eventos próximos </Text>
-
-                        <FlatList
-                            data={dadosEvents}
-                            keyExtractor={(item) => `${item.id}`}     
-                            renderItem={({item}) => (
-                    
+                        <Text style={styles.titlePage}>Confira os eventos próximos: </Text>
+                        {dadosEvents.map((item, id)=>(
                                 <CardEvents 
-                                            evento={item.evento} 
-                                            descricao={item.descricao} 
-                                            local={item.local}
-                                            saveTheDate={item.saveTheDate}
+                                    key={id}
+                                    evento={item.evento} 
+                                    descricao={item.descricao} 
+                                    local={item.local}
+                                    saveTheDate={item.saveTheDate}
                                 />
                             
-                        )}
-                        />
+                        ))}
                     </View>
                 </View>
 
@@ -100,8 +95,6 @@ const styles = StyleSheet.create({
 
     pageHeader: {
         height: 240,
-        backgroundColor: '#987284',
-       
     },
 
     headerMenu: {
@@ -126,7 +119,9 @@ const styles = StyleSheet.create({
 
     infoEvent: {
         flex: 1, 
-        justifyContent: 'flex-end'
+        marginTop:50,
+        justifyContent: 'flex-end',
+        marginLeft: 50,
         
     },
 
@@ -142,7 +137,7 @@ const styles = StyleSheet.create({
     },
 
     saveTheDate:{
-        fontSize: 18,
+        fontSize: 24,
         fontWeight: 'bold',
         color: '#504D4D'
     },
@@ -176,7 +171,7 @@ const styles = StyleSheet.create({
     },
 
     titlePage: {
-        fontSize: 16,
+        fontSize: 18,
         fontWeight: 'bold',
         color: '#504D4D',
         marginTop: 30,
@@ -189,7 +184,7 @@ const styles = StyleSheet.create({
     },
     
     banner: {
-        widht: '100%',  
+        width: '100%',  
     }
 
 })

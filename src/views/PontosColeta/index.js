@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { View, Text, StyleSheet, Dimensions} from 'react-native'
-// import MapView from 'react-native-maps';
+//  import MapView from 'react-native-maps';
 
 
 const PontosColeta = () => {
