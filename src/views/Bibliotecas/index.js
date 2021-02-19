@@ -22,7 +22,7 @@ const dadosBibliotecas = [
 
     {
         id: Math.random(),
-        nome: "Ciranda de Tariuba",
+        nome: "Colibri",
         nome_rede: "Mar de Leitores",
         estado_biblioteca: "RJ",
         cidade_biblioteca: "Paraty"
@@ -38,12 +38,19 @@ const dadosBibliotecas = [
 
     {
         id: Math.random(),
-        nome: "Ciranda de Tariuba",
-        nome_rede: "Mar de Leitores",
+        nome: "Judith Lacaz",
+        nome_rede: "Rede Baixada Literária",
         estado_biblioteca: "RJ",
-        cidade_biblioteca: "Paraty"
-    },
-    
+        cidade_biblioteca: "Nova Iguaçu"
+    },    
+
+    {
+        id: Math.random(),
+        nome: "Dona Corujinha",
+        nome_rede: "Rede Baixada Literária",
+        estado_biblioteca: "RJ",
+        cidade_biblioteca: "Nova Iguaçu"
+    },  
   ]
 
 export default function Bibliotecas (){

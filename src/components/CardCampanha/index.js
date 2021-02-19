@@ -10,7 +10,7 @@ return (
     <View style={styles.container}>
   
             <Image style={styles.capaLivro} source={Capa}/>
-            <View>
+            <View style={styles.containerInfo}> 
                 <Text style={styles.titleLivro}>{props.titulo_pedido}</Text>
                 <Text style={styles.infoLivro}>Exemplares: {props.numeroExemplar_pedido}</Text>
                 <Text style={styles.infoLivro}>Gênero: {props.genero_pedido}</Text>
@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-around',
+        alignItems:'center',
         alignSelf:'center',
         width: '80%',
         padding: 10,
@@ -46,13 +47,19 @@ const styles = StyleSheet.create({
         elevation: 4,
     },
 
+    containerInfo: {
+        width:'70%'
+    },
+
     capaLivro: {
+        marginRight: 20,
         width: 80,
         height: 100,
     },
 
     titleLivro: {
         color:'#504D4D',
+
         fontSize: 16,
         fontWeight: 'bold',
         marginBottom: 5,

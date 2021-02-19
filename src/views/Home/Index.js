@@ -27,26 +27,26 @@ const dadosCampanhas = [
 
     {
         id: Math.random(),
-        titulo_pedido: "O pequeno príncipe",
-        numeroExemplar_pedido: "2",
-        genero_pedido: "Fábula",
-        nome_biblioteca: "Ciranda de Tarituba"
+        titulo_pedido: "O mundo de Sofia",
+        numeroExemplar_pedido: "1",
+        genero_pedido: "Ficção",
+        nome_biblioteca: "Colibri"
     },
 
     {
         id: Math.random(),
-        titulo_pedido: "O pequeno príncipe",
-        numeroExemplar_pedido: "2",
-        genero_pedido: "Fábula",
-        nome_biblioteca: "Ciranda de Tarituba"
+        titulo_pedido: "O sol é para todos",
+        numeroExemplar_pedido: "3",
+        genero_pedido: "Romance",
+        nome_biblioteca: "Quilombo do Campinho"
     },
 
     {
         id: Math.random(),
-        titulo_pedido: "O pequeno príncipe",
+        titulo_pedido: "Extraordinário",
         numeroExemplar_pedido: "2",
-        genero_pedido: "Fábula",
-        nome_biblioteca: "Ciranda de Tarituba"
+        genero_pedido: "Drama",
+        nome_biblioteca: "Judith Lacaz"
     },
   ]
 
@@ -82,7 +82,7 @@ function Home (){
                         <AntDesign name="search1" size={24} color="#686868" />
                     </TouchableOpacity>
                 </View>
-                
+
                 <ScrollView style={styles.scroller}>
                     <View style={styles.containerCampanha}>
                         {dadosCampanhas.map((item, id)=>(

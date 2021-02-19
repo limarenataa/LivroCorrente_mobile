@@ -17,7 +17,7 @@ return (
     <View >
         <TouchableOpacity style={styles.container} onPress={()=>goTo('Biblioteca')}>
             <Image style={styles.logoBiblioteca} source={LogoBiblioteca}/>
-            <View>
+            <View style={styles.containerInfo}>
                 <Text style={styles.titleBiblioteca}>{props.nome}</Text>
                 <Text style={styles.infoBiblioteca}>Rede: {props.nome_rede}</Text>
                 <Text style={styles.infoBiblioteca}>{props.estado_biblioteca}, {props.cidade_biblioteca}</Text>
@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignSelf:'center',
+        alignItems:'center',
         width: '80%',
         padding: 10,
         margin: 10,
@@ -52,9 +53,15 @@ const styles = StyleSheet.create({
         elevation: 4,
     },
 
+    containerInfo: {
+        width:'70%'
+    },
+
     logoBiblioteca: {
         width: 80,
         height: 80,
+        marginLeft:10,
+        marginRight: 30,
     },
 
     titleBiblioteca: {

@@ -1,13 +1,12 @@
 import React from 'react'
-import {SafeAreaView, View, ScrollView, StyleSheet, TouchableOpacity, Image, Text, FlatList}  from 'react-native'
+import {SafeAreaView, View, ScrollView, StyleSheet, TouchableOpacity, Image, Text}  from 'react-native'
 
 
 //Assets/img
 import BibPerfil from '../../../assets/bibPerfil.png';
 
 //Icons
-import { Entypo } from '@expo/vector-icons'; 
-import { AntDesign } from '@expo/vector-icons'; 
+import { Entypo } from '@expo/vector-icons';  
 
 //Components
 import CardCampanha from '../../components/CardCampanha';
@@ -45,9 +44,6 @@ const dadosCampanhas = [
         genero_pedido: "Ficção",
         nome_biblioteca: "Ciranda de Tarituba"
     },
-
-
-   
   ]
 
 
