@@ -1,3 +1,6 @@
+//Observação: O componente ModalInfo só roda a partir do App Expo no mobile.
+// Na visualização do Chrome, o efeito modal e as demais informações da página não rodam corretamente.
+
 import React from 'react';
 import {useState} from 'react';
 import { SafeAreaView, View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, Image, FlatList, Modal } from 'react-native';
@@ -97,6 +100,7 @@ function Home (){
                     </View>
                 </ScrollView>
             
+            {/* O modal só roda no app.  */}
             <ModalInfo
                 show={showModal}
                 setShow={setShowModal}                
