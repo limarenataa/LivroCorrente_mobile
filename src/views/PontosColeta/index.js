@@ -2,16 +2,16 @@
 
 import React from 'react'
 import { View, Text, StyleSheet, Dimensions} from 'react-native'
-//  import MapView from 'react-native-maps';
+import MapView from 'react-native-maps';
 
 
 const PontosColeta = () => {
     return (
         <View style={styles.container}>
-            <Text style={styles.avisoText}>
+            {/* <Text style={styles.avisoText}>
                 Descomentar o código para visualizar o map no app Expo
-            </Text>
-            {/* <MapView 
+            </Text> */}
+            <MapView 
                 style={styles.map}
                 initialRegion={{
                     latitude: -22.9721002,
@@ -20,7 +20,7 @@ const PontosColeta = () => {
                     longitudeDelta: 0.0821,
                 }}
             >       
-            </MapView> */}
+            </MapView>
 
         </View>
     )
@@ -42,8 +42,8 @@ const styles = StyleSheet.create({
         fontSize: 22,
     },
 
-    // map:{
-    //     width: Dimensions.get('window').width, //pegar o tamanho da tela exato
-    //     height: '100%'
-    // },
+    map:{
+        width: Dimensions.get('window').width, //pegar o tamanho da tela exato
+        height: '100%'
+    },
 })

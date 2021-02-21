@@ -1,5 +1,5 @@
-import React from 'react'
-import {SafeAreaView, View, ScrollView, StyleSheet, TouchableOpacity, Image, Text}  from 'react-native'
+import React, {useState} from 'react'
+import {SafeAreaView, View, ScrollView, StyleSheet, TouchableOpacity, Image, Text, FlatList}  from 'react-native'
 
 
 //Assets/img
@@ -10,6 +10,7 @@ import { Entypo } from '@expo/vector-icons';
 
 //Components
 import CardCampanha from '../../components/CardCampanha';
+import ModalInfo from '../../components/ModalInfo'
 
 const dadosCampanhas = [
 
@@ -48,6 +49,14 @@ const dadosCampanhas = [
 
 
 export default function Biblioteca (){
+
+     //State para controlar a exibição do modal
+     const [showModal, setShowModal] = useState(false);
+
+     const handleShowModal = () => {
+         setShowModal(true);
+     } 
+
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView style={styles.scroller}>
@@ -70,21 +79,33 @@ export default function Biblioteca (){
                     <View style={styles.campanhasBiblio}>
                         <Text style={styles.titleCampanhas}>Confira as campanhas desta biblioteca: </Text>
             
-                        {dadosCampanhas.map((item, id)=>(
-                            <CardCampanha 
-                                key={id} 
-                                capa_pedido={item.capa_pedido} 
-                                titulo_pedido={item.titulo_pedido} 
-                                numeroExemplar_pedido={item.numeroExemplar_pedido}
-                                genero_pedido={item.genero_pedido}
-                                nome_biblioteca={item.nome_biblioteca}
-                            />
-                        ))}
+                        <FlatList
+                            data={dadosCampanhas}
+                            keyExtractor={(item) => `${item.id}`}        
+                            renderItem={({item}) => (
+                                <TouchableOpacity  onPress={() => handleShowModal()}>
+                                    <CardCampanha 
+                                        capa_pedido={item.capa_pedido} 
+                                        titulo_pedido={item.titulo_pedido} 
+                                        numeroExemplar_pedido={item.numeroExemplar_pedido}
+                                        genero_pedido={item.genero_pedido}
+                                        nome_biblioteca={item.nome_biblioteca}
+                                    />
+                                </TouchableOpacity> 
+                            )}
+                        />
                         
                     </View>
                 </View>
 
             </ScrollView>
+
+            {/* O modal só roda no app.  */}
+            <ModalInfo
+                show={showModal}
+                setShow={setShowModal}                
+            />
+            
         </SafeAreaView>
     )
 }

@@ -88,15 +88,24 @@ function Home (){
 
                 <ScrollView style={styles.scroller}>
                     <View style={styles.containerCampanha}>
-                        {dadosCampanhas.map((item, id)=>(
-                            <CardCampanha 
-                                key={id} 
-                                titulo_pedido={item.titulo_pedido} 
-                                numeroExemplar_pedido={item.numeroExemplar_pedido} 
-                                genero_pedido={item.genero_pedido}
-                                nome_biblioteca={item.nome_biblioteca}
-                            />
-                        ))}
+                        {/* FlatList -  Parece o map do React */}
+                    <FlatList
+                        data={dadosCampanhas}
+                        keyExtractor={(item) => `${item.id}`}    
+                        //Para cada usuário, cria um componente User para renderizar o usuário    
+                        renderItem={({item}) => (
+                            <TouchableOpacity  onPress={() => handleShowModal()}>
+                                <CardCampanha 
+                                    capa_pedido={item.capa_pedido} 
+                                    titulo_pedido={item.titulo_pedido} 
+                                    numeroExemplar_pedido={item.numeroExemplar_pedido}
+                                    genero_pedido={item.genero_pedido}
+                                    nome_biblioteca={item.nome_biblioteca}
+                                />
+                            </TouchableOpacity> 
+                        )}
+                    />
+               
                     </View>
                 </ScrollView>
             
